@@ -3,6 +3,9 @@
 		{% block head %}
 			<title>designhawg</title>
 		{% endblock head %}
+		<!-- stylesheets -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.min.css') }}">
 	</head>
 	<body>
 		{% block content %}
