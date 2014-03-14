@@ -29,6 +29,9 @@ class Post(object):
 				content += line
 		self.__dict__.update(yaml.load(content))
 
+def format_date(value, format='%B %d, %Y'):
+	return value.strftime(format)
+
 @app.route('/')
 def index():
 	return 'Hello, World!'

@@ -7,17 +7,20 @@
 {% block content %}
 
 	<!-- header -->
-	<div id="header">
-		<h1>{{ post.title }}</h1>
-		{% if post.subtitle %}
-			<h2>{{ post.subtitle }}</h2>
-		{% endif %}
-		<h3 id="date">{{ post.date }}</h3>
+<div class="row">
+	<div class="span8 columns">
+		<div id="header">
+			<h1>{{ post.title }}</h1>
+			{% if post.subtitle %}
+				<h2>{{ post.subtitle }}</h2>
+			{% endif %}
+			<p id="date">{{ post.date }}</p>
+		</div>
+		<!-- content -->
+		<div id='content'>
+			{{ post.html|safe }}
+		</div>
 	</div>
-
-	<!-- content -->
-	<div id='content'>
-		{{ post.html|safe }}
-	</div>
+</div>
 
 {% endblock content %}
