@@ -1,13 +1,41 @@
 import os
 
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, abort
 from werkzeug import cached_property
 import markdown
 import yaml
 
 POSTS_FILE_EXTENSION = '.md'
 
-app = Flask(__name__)
+class Blog(object):
+	def __init__(self, app, root_dir='', file_ext=POSTS_FILE_EXTENSION):
+		self.root_dir = root_dir
+		self.file_ext = file_ext
+		self.app = app
+		self._cache = {}
+		self._initialize_cache()
+
+	@property
+	def posts(self):
+		return self._cache.values()
+
+	def get_post_or_404(self, path):
+		# returns the Post object for a given path or raises an exception
+		try:
+			return self._cache[path]
+		except KeyError:
+			abort(404)
+
+	def _initialize_cache(self):
+		# Walks the root directory and adds all posts to cache
+		# current root_dir + directory list of root_dir + files in root_dir
+		for (root, dirpaths, filepaths) in os.walk(self.root_dir):
+			for filepath in filepaths:
+				filename, ext = os.path.splitext(filepath)
+				if ext == self.file_ext:
+					path = os.path.join(root, filepath).replace(self.root_dir, '')
+					post = Post(path, root_dir = self.root_dir)
+					self._cache[post.urlpath] = post
 
 class Post(object):
 	def __init__(self, path, root_dir=''):
@@ -34,18 +62,21 @@ class Post(object):
 				content += line
 		self.__dict__.update(yaml.load(content))
 
+app = Flask(__name__)
+blog = Blog(app, root_dir = 'posts')
+
+
 @app.template_filter('date')
 def format_date(value, format='%B %d, %Y'):
 	return value.strftime(format)
 
 @app.route('/')
 def index():
-	posts = [Post('hello.md', root_dir='posts')]
-	return render_template('index.html', posts=posts)
+	return render_template('index.html', posts=blog.posts)
 
 @app.route('/blog/<path:path>')
 def post(path):
-	post = Post(path + POSTS_FILE_EXTENSION, root_dir='posts')
+	post = blog.get_post_or_404(path)
 	return render_template('post.html', post=post)
 
 if __name__ == '__main__':
