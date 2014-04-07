@@ -1,0 +1,9 @@
+body {
+	background-color: green;
+}
+
+#header {
+	margin-top: 100px;
+}
+
+.post { padding: 10px 0px;}
