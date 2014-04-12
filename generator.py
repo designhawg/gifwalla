@@ -1,8 +1,10 @@
 import os
+import sys
 import collections
 
-from flask import Flask, render_template, url_for, abort
+from flask import Flask, render_template, url_for, abort, request
 from werkzeug import cached_property
+from werkzeug.contrib.atom import AtomFeed
 import markdown
 import yaml
 
@@ -92,9 +94,8 @@ class Post(object):
 			content = fin.read().split('\n\n', 1)[1].strip()
 		return markdown.markdown(content)
 
-	@property
-	def url(self):
-		return url_for('post', path=self.urlpath)
+	def url(self, _external=False):
+		return url_for('post', path=self.urlpath, _external = _external)
 
 	def _initialize_metadata(self):
 		content = ''
@@ -117,10 +118,31 @@ def format_date(value, format='%B %d, %Y'):
 def index():
 	return render_template('index.html', posts=blog.posts)
 
-@app.route('/blog/<path:path>')
+@app.route('/blog/<path:path>/')
 def post(path):
 	post = blog.get_post_or_404(path)
 	return render_template('post.html', post=post)
+
+@app.route('/feed.atom')
+def feed():
+	feed = AtomFeed('Recent Articles',
+		#the feed url is the source that powers the website url, which is the literal address
+		#request is imported from Flask, but this Global variable is considered a Context Local.
+    	feed_url=request.url,
+    	url=request.url_root)
+	posts = blog.posts[:10]
+    # this exists because there is no subtitle option within FeedEntry method
+	title = lambda p: "%s: %s" % (p.title, p.subtitle) if hasattr(p, 'subtitle') else p.title
+
+	for post in posts:
+		feed.add(title(post),
+		unicode(post.html),
+			content_type='html',
+			author='Chris Courtney',
+			url=post.url(_external=True),
+			updated=post.date,
+			published=post.date)
+	return feed.get_response()
 
 if __name__ == '__main__':
 	post_files = [post.filepath for post in blog.posts]
