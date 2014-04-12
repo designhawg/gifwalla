@@ -123,4 +123,7 @@ def post(path):
 	return render_template('post.html', post=post)
 
 if __name__ == '__main__':
-	app.run(port=8000, debug=True)
+	post_files = [post.filepath for post in blog.posts]
+	app.run(port=8000, debug=True, extra_files=post_files)
+
+	#post_files was created to allow the creator to automatically update the app locally without having to respin up the local server to account for the new files
