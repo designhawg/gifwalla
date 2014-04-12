@@ -3,6 +3,7 @@ import sys
 import collections
 
 from flask import Flask, render_template, url_for, abort, request
+from flask.ext.frozen import Freezer
 from werkzeug import cached_property
 from werkzeug.contrib.atom import AtomFeed
 import markdown
@@ -108,6 +109,7 @@ class Post(object):
 
 app = Flask(__name__)
 blog = Blog(app, root_dir = 'posts')
+freezer = Freezer(app)
 
 
 @app.template_filter('date')
@@ -145,7 +147,10 @@ def feed():
 	return feed.get_response()
 
 if __name__ == '__main__':
-	post_files = [post.filepath for post in blog.posts]
-	app.run(port=8000, debug=True, extra_files=post_files)
+	if len(sys.argv) > 1 and sys.argv[1] == 'build':
+		freezer.freeze()
+	else:
+		post_files = [post.filepath for post in blog.posts]
+		app.run(port=8000, debug=True, extra_files=post_files)
 
-	#post_files was created to allow the creator to automatically update the app locally without having to respin up the local server to account for the new files
+		#post_files was created to allow the creator to automatically update the app locally without having to respin up the local server to account for the new files
