@@ -26,7 +26,7 @@ There may never be a summer in Chicago worse than the summer of 1919. The bad po
 ### Design of Everyday Things
 
 ### Design is a Job
-Let's all be adults and agree that talking about money isn't weird—it's a necessity of life and we'll all do a good job of covering our asses while doing our best work for the people we work with and for. Deal?
+Let's all be adults and agree that talking about money isn't weird - it's a necessity of life and we'll all do a good job of covering our asses while doing our best work for the people we work with and for. Deal?
 
 ### The Devil in the White City
 
@@ -34,7 +34,7 @@ Let's all be adults and agree that talking about money isn't weird—it's a nece
 To understand the actions of your co-worker, a spouse, you kid, etc... you must first uncover the motivation behind their action.
 
 ### Freakonomics
-Understanding why something happens often can be distilled down to one thing——incentive. If you can determine the incentive, the reason behind every action will become clear.
+Understanding why something happens often can be distilled down to one thing - incentive. If you can determine the incentive, the reason behind every action will become clear.
 
 ### Giving
 
@@ -71,7 +71,7 @@ If you are in the room, sit at the table and act like you belong. Listen closely
 A book is a startup and this isn't such a new idea. The great English authors of the 1800s were very Lean in their serial approach to producing high literature through magazine publication first and books second.
 
 ### Lean UX
-Design and development start at the same time, with input from all parties and then everyone dives into their specialties—not the other way around.
+Design and development start at the same time, with input from all parties and then everyone dives into their specialties - not the other way around.
 
 ### Linchpin
 The unscalable, creative assets that no process can be put around are the key to winning in the new economy. And when you hear a nagging voice resonating in the back of your mind telling you to play it safe, just realize it's your lizard brain trying to hold you back.
