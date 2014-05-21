@@ -157,10 +157,11 @@ def deploy(root_dir):
 	conn = boto.connect_s3(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY)
 	bucket = conn.get_bucket(DOMAIN)
 	for (root, dirpaths, filepaths) in os.walk(root_dir):
-		filename = os.path.join(root, filepath)
-		name = filename.replace(root_dir, '', 1)[1:]
-		key = Key(bucket, name)
-		key.set_contents_from_filename(filename)
+		for filepath in filepaths:
+			filename = os.path.join(root, filepath)
+			name = filename.replace(root_dir, '', 1)[1:]
+			key = Key(bucket, name)
+			key.set_contents_from_filename(filename)
 
 	print 'Site is now up on %s' % bucket.get_website_endpoint()
 
