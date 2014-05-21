@@ -20,6 +20,7 @@ Go. Make. Meaning. If you attempt to work for yourself, don't waste your time do
 There may never be a summer in Chicago worse than the summer of 1919. The bad politics of Mayor William Thompson would prime Chicago for Al Capone's era of crime and corruption that would follow.
 
 ### David and Goliath
+Are the clear advantages really advantages at all. While Goliath was a beast of a man and heavily armored, he was also a sitting duck for the master slingman that was David. David had the upper hand all along because he recognized how to play to his own strengths. Similar to a basketball team that uses the entire court rather than just the half court approach we are used to seeing, you have to look at your life and see where there are opportunities that you've simply been missing because you have been rendered blind by the world around you.
 
 ### Delivering Happiness
 
@@ -29,12 +30,15 @@ There may never be a summer in Chicago worse than the summer of 1919. The bad po
 Let's all be adults and agree that talking about money isn't weird - it's a necessity of life and we'll all do a good job of covering our asses while doing our best work for the people we work with and for. Deal?
 
 ### The Devil in the White City
+With so many big problems to tackle during the time of the 1893 Columbian Exposition in Chicago, who can really blame the police for not looking more closely into the reports of women coming to Chicago and never being seen again. The story of mass murder H.H. Holmes is a classic tale of the right crime in the right place at the right time. The murder spree Holmes carried out wouldn't likely be possible today, but then again who would have thought such a series of tragic events could occur just in the shadow of one of the world's biggest gatherings.
 
 ### Drive
 To understand the actions of your co-worker, a spouse, you kid, etc... you must first uncover the motivation behind their action.
 
 ### Freakonomics
 Understanding why something happens often can be distilled down to one thing - incentive. If you can determine the incentive, the reason behind every action will become clear.
+
+### The Gifts of Imperfection
 
 ### Giving
 
@@ -119,6 +123,7 @@ Related, there isn't a right time to accept God - so just do it already. He love
 Information doesn't travel in a straight line and because of the way it bounces around the globe, anyone can likely track anything they want. You're phone calls to a neighbor may bounce at the speed of light to Pakistan and back. An email from your mom may have been routed through China. That is how the system works and that's also how the laws have been bent to allow for such easedropping. You have to understand how the system works to see how the law is actually broken. I'm pretty sure lawmakers simply didn't understand how the system worked, but ignorance shouldn't grant our elected officials a free pass.
 
 ### Sin in the Second City
+How many times will Chicago have to relive lessons that should have been learned from the destruction of the First Ward vice district? For years, crime had its place in Chicago and stayed nestled down on the river just north of Chinatown. Illegal, immoral but ultimately controlled by politicians and the sisters Everleigh. The Everleigh club was the crown jewel of American brothels in era and the sisters basically set the standard that the district would be measured by. But 1900-era reformers would take aim at the sisters and the district, closing the club and scattering the tainted souls of the district across the city of Chicago.
 
 ### The Social Animal
 Our motivations for learning will change drastically as we age, but it will always be driven by our ability to attain and manipulate mental models. The best way for us to learn is simply to do.
@@ -146,3 +151,4 @@ Dreams, chemicals, error and random chance have just as much to do with innovati
 ### The Whole Brain Child
 
 ### World War Z
+First, go buy the audiobook. It's simply the best audiobook I've ever heard. Read by amazing actors, it takes a really good book and puts it on a whole new level. Second, skip the movie. The only thing it shares with the book is the title.

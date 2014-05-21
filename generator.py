@@ -2,12 +2,19 @@ import os
 import sys
 import collections
 
+import boto
+
+from boto.s3.key import Key
 from flask import Flask, render_template, url_for, abort, request
 from flask.ext.frozen import Freezer
 from werkzeug import cached_property
 from werkzeug.contrib.atom import AtomFeed
 import markdown
 import yaml
+
+DOMAIN = 'flasktestbucket'
+AWS_ACCESS_KEY_ID = 'AKIAIOFCHO67G7A4A35A'
+AWS_SECRET_ACCESS_KEY = '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'
 
 POSTS_FILE_EXTENSION = '.md'
 
@@ -146,9 +153,23 @@ def feed():
 			published=post.date)
 	return feed.get_response()
 
+def deploy(root_dir):
+	conn = boto.connect_s3(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY)
+	bucket = conn.get_bucket(DOMAIN)
+	for (root, dirpaths, filepaths) in os.walk(root_dir):
+		filename = os.path.join(root, filepath)
+		name = filename.replace(root_dir, '', 1)[1:]
+		key = Key(bucket, name)
+		key.set_contents_from_filename(filename)
+
+	print 'Site is now up on %s' % bucket.get_website_endpoint()
+
 if __name__ == '__main__':
 	if len(sys.argv) > 1 and sys.argv[1] == 'build':
 		freezer.freeze()
+	elif len(sys.argv) > 1 and sys.argv[1] == 'deploy':
+		freezer.freeze()
+		deploy('build')
 	else:
 		post_files = [post.filepath for post in blog.posts]
 		app.run(port=8000, debug=True, extra_files=post_files)
