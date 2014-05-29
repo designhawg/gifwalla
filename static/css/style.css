@@ -7,3 +7,8 @@ body {
 }
 
 .post { padding: 10px 0px;}
+
+.stuff {
+	height: 100px;
+	width: 100px;
+}

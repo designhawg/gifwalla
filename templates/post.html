@@ -19,6 +19,9 @@
 		<!-- content -->
 		<div id='content'>
 			{{ post.html|safe }}
+			{% if post.image %}
+				<img class="stuff">{{ post.image }}</img>
+			{% endif %}
 		</div>
 	</div>
 </div>

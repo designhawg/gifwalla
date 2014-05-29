@@ -5,6 +5,8 @@ date: 2014-05-06
 
 ### 'War Lovers' serves timely reminder of the tender ground all modern nations are built on
 
+![Alt text](/static/img/towes_game1.gif){: .stuff}
+
 'Don't cheer, boys. The poor devils are dying.' - Rear Admiral John W. Philip
 
 For all the hawks and doves that populate this well written book, it is Rear Admiral Phillip's quote that sticks with me because it manages to capture the rare moment of grace in the face of victory.
