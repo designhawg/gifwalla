@@ -12,7 +12,7 @@ from werkzeug.contrib.atom import AtomFeed
 import markdown
 import yaml
 
-DOMAIN = 'flasktestbucket'
+DOMAIN = 'gifwalla.com'
 AWS_ACCESS_KEY_ID = 'AKIAIOFCHO67G7A4A35A'
 AWS_SECRET_ACCESS_KEY = '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'
 
@@ -127,7 +127,7 @@ def format_date(value, format='%B %d, %Y'):
 def index():
 	return render_template('index.html', posts=blog.posts)
 
-@app.route('/blog/<path:path>/')
+@app.route('/series/<path:path>/')
 def post(path):
 	post = blog.get_post_or_404(path)
 	return render_template('post.html', post=post)

@@ -4,23 +4,30 @@
 {% endblock head %}
 
 {% block content %}
-	<div class="row">
-		<div class="large-8 large-centered columns">
-			<div id="header">
-				<h1>My awesome stuff</h1>
-			</div>
+<div class="fans">
+	<div class="redover">
+		<div class="row">
+			<div class="large-8 large-centered columns">
+				<img class="pad-top" src="/static/img/logo_white.png">
+				<h2>A new way to look at sports.</h2>
 
-			<div id="posts">
-				{% for post in posts %}
-					<div class='post'>
-						<span class="post-date">{{ post.date|date }}</span>
-						<a href="{{ post.url() }}" class="post-title">
-							{{ post.title }}{% if post.subtitle %}: {{ post.subtitle }} {% endif %}
-						</a>
-					</div>
-				{% endfor%}
+				<!-- <div id="header">
+					<h1>This is Gifwalla!</h1>
+				</div> -->
+
+				<div id="posts">
+					{% for post in posts %}
+						<div class='games'>
+							<!-- <span class="post-date">{{ post.date|date }}</span> -->
+							<a href="{{ post.url() }}" class="game-link">
+								{{ post.title }}{% if post.subtitle %}: {{ post.subtitle }} {% endif %}
+							</a>
+						</div>
+					{% endfor%}
+				</div>
 			</div>
 		</div>
 	</div>
+</div>
 
 {% endblock content %}

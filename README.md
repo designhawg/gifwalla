@@ -1,4 +1,4 @@
-flaskblog
+Gifwalla
 =========
 
-Laying down the foundation for a blog using markdown and S3 for publishing.
+Fun little project to see if we can change how sports is being seen and shared.
